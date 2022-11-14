@@ -20,6 +20,28 @@ async function getGeo() { // Skapar funktion för att kunna hämta destination o
     let lat = dataGeo[0].lat;
     let lon = dataGeo[0].lon;
 
+    const weather_api_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+    // Gör ett API-samtal (begäran)
+    // och får svaret tillbaka
+    const response_ = await fetch(weather_api_url);
+ 
+    // Parsing till JSON-format
+    const dataWeather = await response_.json();
+   
+
+    let grader = dataWeather.main.temp; // Efter att jag får ut Objektet från dataWeather så gör det möjligt att få ut .main.temp för att få ut värdet.
+    
+
+    let celcius = (parseFloat(dataWeather.main.temp) - 273.15); // Använder Kelvin för att räkna ut temperaturen i Celcius
+
+    let celciusValue = parseFloat(celcius.toFixed(0)); // Använder mig utav fixed för att slippa decimalerna
+    
+
+    let outputCelcius = celciusValue; // Hämtar celcius
+    let statusWeather = dataWeather.weather[0].description; 
+    temperatur.innerHTML = outputCelcius+'°C' + ' ' + statusWeather;
+
 } 
 
 getGeo();
