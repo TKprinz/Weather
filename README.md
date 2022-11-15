@@ -14,8 +14,6 @@ Och nu använder jag mig också utav fetch igen för att göra det möjligt för
 
 "celcius" variabeln gör så jag får ut temperaturen i Kelvin och då måste jag parseFloat, rikta in dataWeather.main.temp som jag kunde lista ut via konsolen som man får ut en lista med väder-status i Marbella.
 
-celciusValue gör så jag får ut temperaturen utan decimaler, så jag enbart får tex. 24ºC.
-
-outputValue gör så jag får ut temperaturen i Celcius istället för Kelvin.
+celciusValue gör så jag får ut temperaturen utan decimaler, så jag enbart får tex. 24ºC. Det gör även så jag får ut temperaturen i Celcius istället för Kelvin.
 
 temperatur.innerHTML = outputCelcius+'°C' + ' ' + statusWeather; är så jag får ut den nuvarande väderläget i Marbella, visuellt på min hemsida.
